@@ -1,0 +1,16 @@
+
+Authors: Aman Panda, Abha Laddha, Noah Brackenbury
+API, Tests, and a View
+2/2/17
+Thacker Port No (Aman Panda): 5122
+
+api.py is our main python file that should be run in the following way:
+python3 api.py localhost 5000
+
+api_tests contains our testing suite and expected outputs.
+
+Within the folder static, we have the css file that styles our frontpage,
+called main.css. The folder also contains worldmap.jpg, which is a picture
+of a world map.
+
+Within the folder templates, we have our main html file, which is frontpage.html

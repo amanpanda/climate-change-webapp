@@ -1,0 +1,25 @@
+CREATE TABLE climateChange
+(
+country_code varchar(255),
+country_name varchar(255),
+co2_emissions varchar(255),
+Y1990 real,
+Y1991 real,
+Y1992 real,
+Y1993 real,
+Y1994 real,
+Y1995 real,
+Y1996 real,
+Y1997 real,
+Y1998 real,
+Y1999 real,
+Y2000 real,
+Y2001 real,
+Y2002 real,
+Y2003 real,
+Y2004 real,
+Y2005 real,
+Y2006 real,
+Y2007 real,
+Y2008 real
+);

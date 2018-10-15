@@ -1,0 +1,126 @@
+body {
+	background: black;
+  min-width: 800px;
+  font-family: 'Baskerville';
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+h3 {
+  font-size: 1em;
+}
+
+.header-box {
+  color: white;
+	height: 12em;
+  width: 900px;
+  margin: 0 auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  position: relative;
+}
+
+.description-side {
+	width: 53%;
+	padding: .5em;
+  padding-right: 1.5em;
+  float: left;
+  text-align: justify;
+  border-right: 1px solid white;
+}
+
+.title {
+	height: 1.5em;
+	font-size: 1.75em;
+}
+
+.description-text {
+	display: inline-block;
+  float: left;
+  font-size: 1em;
+}
+
+.form-side {
+  height: 10em;
+  padding: .5em;
+  float: left;
+  width: calc(45% - 2em);
+  margin-top: .5em;
+}
+
+.search-box-section {
+	height: 4em;
+}
+
+.search-box {
+  float: right;
+}
+
+input[type="search"] {
+  padding: .5em .5em;
+  font-size: 1.2em;
+  border: 1px;
+  width: 18em;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-image: url('search.png');
+  background-size: 20px 18px;
+  background-position: 13px 13px; 
+  background-repeat: no-repeat;
+  padding-left: 40px;
+}
+
+input[type="search"]:focus {
+}
+
+.radio-buttons {
+  bottom: 0em;
+  right: 2em;
+  font-size: 1.2em;
+}
+
+.button {
+  height: 2em;
+  padding-left: 1.5em;
+}
+
+.map-section {
+  margin: 0 auto;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  width: 900px;
+}
+.map-back {
+  background-color: white; 
+}
+
+.map-js {
+  background-color: white; 
+  width: 0px; 
+  height: 500px;
+}
+
+svg {
+  margin-left: 3em;
+  background: white;
+}
+
+.year-slider {
+  padding:1em;
+}
+
+.year-slider input[type="range"] {
+  width: 90%;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+
+.year-slider-value {
+  color: white;
+  margin-left: 17.5em;
+  font-size: 1.5em;
+}

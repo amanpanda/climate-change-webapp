@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8">
+  <title>Climate Change for {{ countryName }}</title> 
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='country.css') }}" />
+  <script type="text/javascript" src="{{ url_for('static', filename='interactivity.js') }}"></script>
+</head> 
+<body>
+	<div class="header-section">
+		<div class="map-button" onclick="homeRedirect()">
+		</div>
+		<div class="country-title">
+			Climate Change data for {{ countryName }}
+		</div>
+		<div class="search-box-section">
+			<input type="search" id="search" placeholder="Search by Country" class="search-box" onkeydown="searchRedirect(this)">
+			<script type="text/javascript">
+        var country_url_temp = "{{ url_for('countryPageLoad', countryName='NOTACOUNTRY') }}";
+      </script>
+	  </div>
+	</div>
+	<div class="tableDiv" id="tableDiv">
+	</div>
+	<script>
+		searchCountry('{{ countryName }}');
+	</script>
+</body>
+</html>

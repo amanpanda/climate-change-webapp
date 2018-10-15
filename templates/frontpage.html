@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8">
+  <title>Impact of Climate Change</title> 
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}" />
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='interactivity.js') }}"></script>
+  <script type="text/javascript">
+    google.charts.load('upcoming', {'packages':['geochart']});
+  </script>
+</head> 
+<body onload="mapUpdate()"> 
+  <div class="header-box"> 
+    <div class="description-side"> 
+      <div class="title"> 
+        Global CO<sub>2</sub> Emissions Infograph
+      </div> 
+      <div class="description-text"> 
+        The onset of the new millenium has brought with it unsettling increases in global CO<sub>2</sub> 
+        emissions. The infographic below illustrates this increase in terms of three different
+        criteria that can be selected. Use the slider at the bottom of the page to observe the
+        increase of global CO<sub>2</sub> emissions, or use the search bar in the top right to query for
+        statistics for a given country.The data ranges from 1991 to 2008 and is provided by
+        the World Development Indicators and Climate Change Knowledge Portal.
+      </div> 
+    </div> 
+    <div class="form-side"> 
+      <div class="search-box-section">
+        <input type="search" id="search" placeholder="Search by Country" class="search-box" onkeydown="searchRedirect(this)">
+      </div>
+      <script type="text/javascript">
+        var country_url_temp = "{{ url_for('countryPageLoad', countryName='NOTACOUNTRY') }}";
+      </script>
+      <div class="radio-buttons"> 
+        <label>
+          <div class="button">
+            <input type="radio" name="options" id="total" onclick="radioUpdate(this.id)" checked> CO<sub>2</sub> Total (Kt of CO<sub>2</sub>)
+          </div>
+        </label>
+        <label>
+          <div class="button">
+            <input type="radio" name="options" id="capita" onclick="radioUpdate(this.id)"> CO<sub>2</sub> Per Capita (Metric Tons)
+          </div>
+        </label>
+        <label>
+          <div class="button">
+            <input type="radio" name="options" id="GDP" onclick="radioUpdate(this.id)"> CO<sub>2</sub> Per Unit of GDP (kg/$1,000)
+          </div>
+        </label>
+      </div> 
+    </div>
+  </div> 
+  <div class="map-section"> 
+    <div class="map-back">
+      <div class="map-js" id="regions_div">
+        <script type="text/javascript">
+          //google.charts.load('current', {'packages':['geochart']});
+          //google.charts.load('upcoming', {'packages':['geochart']});
+          google.charts.setOnLoadCallback(drawRegionsMap);
+          function drawRegionsMap() {
+            var data = google.visualization.arrayToDataTable(mapInfo);
+            var options = {colorAxis: {colors: ['white', 'red']}};
+            var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+            chart.draw(data, options);
+          }
+        </script>
+      </div>
+    </div>
+    <div class = "year-slider"> 
+      <form name="slider-form" 
+        oninput="sliderUpdate()"
+      >
+        <input name="yearSlider" id="yearSlider" type="range" 
+          step="1" min="1990" max="2008" value="1990"
+        >
+        <output class="year-slider-value" id="outputSlider" name="slider1value" for="yearSlider" >1990</output>
+      </form>
+    </div> 
+  </div> 
+</body> 
+</html>

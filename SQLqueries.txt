@@ -1,0 +1,8 @@
+
+For querying by country (dropdown):
+
+byCountry(String country):
+	select * from climatechange where country_name = (PARAM) country
+
+byYearAndType(String year, String radioSelection):
+	select country_name, (PARAM) year from climatechange where co2_emissions = (PARAM) radioSelection
